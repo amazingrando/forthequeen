@@ -24,6 +24,8 @@ export default () => {
           grid-template-columns: 1fr auto auto;
           grid-template-rows: auto;
           grid-template-areas: "logo link1 link2";
+          padding-left: 1rem;
+          padding-right: 1rem;
         }
 
         a {
@@ -46,9 +48,15 @@ export default () => {
       <Link
         to={`/`}
         css={css`
-          justify-self: start;
+          justify-self: center;
           width: 100%;
           grid-area: logo;
+          text-align: center;
+
+          @media (min-width: 650px) {
+            justify-self: start;
+            text-align: left;
+          }
         `}
       >
         <img
@@ -72,8 +80,11 @@ export default () => {
       <Link
         to={`/`}
         css={css`
-          margin-right: 2rem;
           grid-area: link1;
+
+          @media (min-width: 650px) {
+            margin-right: 2rem;
+          }
         `}
       >
         <FontAwesomeIcon icon="chess-queen" /> Licensing

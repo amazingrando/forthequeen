@@ -11,10 +11,24 @@ Use of this license will simply require that you make a clear statement (we’ll
 To make legal use of the _Descended From the Queen_ logo, you must include the following text:
 
 <div class="well">
-<em>For the Queen</em>™ is a trademark of Alex Roberts. The _Descended From the Queen_ Logo is © Alex Roberts, and is used with permission.
+<em>For the Queen</em>™ is a trademark of Alex Roberts. The <em>Descended From the Queen</em> Logo is © Alex Roberts, and is used with permission.
 </div>
 
-**TODO: _Descended From the Queen_ Logos**
+<section class="figure-list">
+  <figure>
+    <a href="From-the-Queen-Light-Background.png">
+      <img src="From-the-Queen-Dark-Background.gif" alt="From The Queen Logo on a Dark Background">
+    </a>
+    <figcaption><a href="From-the-Queen-Dark-Background.png">Print-Ready Logo on a Dark Background</a></figcaption>
+  </figure>
+
+  <figure>
+    <a href="From-the-Queen-Light-Background.png">
+      <img src="From-the-Queen-Light-Background.gif" alt="From The Queen Logo on a Light Background">
+    </a>
+    <figcaption><a href="From-the-Queen-Light-Background.png">Print-Ready Logo on a Light Background</a></figcaption>
+  </figure>
+</section>
 
 ### A Guide To Using the _For the Queen_ SRD with Creative Commons
 

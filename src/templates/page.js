@@ -15,6 +15,11 @@ export default ({ data }) => {
           box-shadow: 0 14px 18px 10px #57060e;
           text-align: left;
 
+          @media (min-width: 650px) {
+            margin-left: 1rem;
+            margin-right: 1rem;
+          }
+
           &::after {
             content: "";
             border: 1px solid #ddca4d;
@@ -47,6 +52,18 @@ export default ({ data }) => {
             border-radius: 4px;
             padding: 1rem;
             margin-bottom: 1rem;
+          }
+
+          .figure-list {
+            img {
+              margin-bottom: 0;
+            }
+
+            @media (min-width: 700px) {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-column-gap: 3rem;
+            }
           }
         `}
       >
