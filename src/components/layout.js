@@ -2,6 +2,7 @@ import React from "react"
 import { css } from "@emotion/core"
 import Header from "./header"
 import Footer from "./footer"
+import SEO from "./seo"
 
 export default ({ children }) => (
   <div
@@ -10,6 +11,7 @@ export default ({ children }) => (
       max-width: 1000px;
     `}
   >
+    <SEO />
     <Header />
     {children}
     <Footer />

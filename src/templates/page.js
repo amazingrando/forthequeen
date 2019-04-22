@@ -2,11 +2,13 @@ import React from "react"
 import { graphql } from "gatsby"
 import { css } from "@emotion/core"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 export default ({ data }) => {
   const post = data.markdownRemark
   return (
     <Layout>
+      <SEO />
       <div
         css={css`
           background: white;
