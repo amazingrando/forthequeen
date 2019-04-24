@@ -1,5 +1,5 @@
 {
-  "name": "For The Queen SRD",
+  "name": "for-the-queen-srd",
   "private": true,
   "description": "For The Queen SRD",
   "version": "0.1.0",
@@ -28,8 +28,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.19",
-    "typography": "^0.16.19",
-    "typography-theme-kirkham": "^0.16.19"
+    "typography": "^0.16.19"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-pro": "^5.8.1",
