@@ -6,6 +6,8 @@ title: "SRD"
 
 Players collaboratively tell a story about a Queen’s retinue undertaking a perilous journey, by each contributing one character’s subjective viewpoint. All the player characters have a complicated history with the Queen, and the journey becomes a place for them to both develop and reflect on that relationship, and perhaps grow closer to the other members of the retinue as well.
 
+_For the Queen_ is inspired by early digital RPGs like _Final Fantasy_, and elegant story games like Aleksandra Sontowska’s _The Beast_.
+
 The setting information, instructions, and player prompts are all delivered via a deck of cards. This deck consists of:
 
 **Instruction Cards**—These contain the game rules and setting information
