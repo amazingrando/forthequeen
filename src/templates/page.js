@@ -56,16 +56,9 @@ export default ({ data }) => {
             margin-bottom: 1rem;
           }
 
-          .figure-list {
-            img {
-              margin-bottom: 0;
-            }
-
-            @media (min-width: 700px) {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              grid-column-gap: 3rem;
-            }
+          figure img {
+            max-width: 400px;
+            margin-bottom: 0;
           }
         `}
       >
