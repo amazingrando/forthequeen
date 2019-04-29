@@ -87,7 +87,14 @@ export default () => {
           }
         `}
       >
-        <FontAwesomeIcon icon="chess-queen" /> Licensing
+        <FontAwesomeIcon
+          icon="chess-queen"
+          css={css`
+            width: 30px;
+            height: 30px;
+          `}
+        />{" "}
+        Licensing
       </Link>
       <Link
         to={`/srd`}
@@ -95,7 +102,14 @@ export default () => {
           grid-area: link2;
         `}
       >
-        <FontAwesomeIcon icon="heart" /> SRD
+        <FontAwesomeIcon
+          icon="heart"
+          css={css`
+            width: 30px;
+            height: 30px;
+          `}
+        />{" "}
+        SRD
       </Link>
     </header>
   )
