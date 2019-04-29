@@ -41,5 +41,12 @@ module.exports = {
         theme_color: "#663399",
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-7197503-6",
+        respectDNT: false,
+      },
+    },
   ],
 }

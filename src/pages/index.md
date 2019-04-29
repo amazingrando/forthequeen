@@ -15,9 +15,7 @@ To make legal use of the _Descended From the Queen_ logo, you must include the f
 </div>
 
 <figure>
-  <a href="descended-from-the-queen.zip">
-    <img src="descended-from-the-queen.png" alt="Descended From The Queen Logo">
-  </a>
+  <img src="descended-from-the-queen.png" alt="Descended From The Queen Logo">
   <figcaption><a href="descended-from-the-queen.zip">Download (SVG, EPS, AI, PNG)</a></figcaption>
 </figure>
 
