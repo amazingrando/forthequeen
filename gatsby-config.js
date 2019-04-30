@@ -48,5 +48,12 @@ module.exports = {
         respectDNT: false,
       },
     },
+    {
+      resolve: "gatsby-plugin-htaccess",
+      options: {
+        https: true,
+        www: false,
+      },
+    },
   ],
 }
