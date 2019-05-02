@@ -3,7 +3,7 @@ module.exports = {
     title: `For The Queen SRD`,
     description: `For The Queen system reference document and licensing information.`,
     twitterUsername: `@evilhatofficial`,
-    url: "http://stage.forthequeengame.com",
+    url: "https://forthequeengame.com",
     image: "/sharing.png",
   },
   plugins: [
