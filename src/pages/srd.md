@@ -2,7 +2,7 @@
 title: "SRD"
 ---
 
-> For the Queen is a game about love, duty, and devotion.
+> _For the Queen_ is a game about love, duty, and devotion.
 
 Players collaboratively tell a story about a Queen’s retinue undertaking a perilous journey, by each contributing one character’s subjective viewpoint. All the player characters have a complicated history with the Queen, and the journey becomes a place for them to both develop and reflect on that relationship, and perhaps grow closer to the other members of the retinue as well.
 
@@ -22,7 +22,7 @@ The setting information, instructions, and player prompts are all delivered via 
 
 ## The Characters and Their World
 
-For the Queen stars characters who are on a journey with their beloved, and often terrible, Queen. They may or may not know why they were chosen or what will happen to them along the way. No one plays the Queen; players come to know her only through the eyes of the player characters, who love and serve her. Aside from those specifications, everything that happens to and exists around the characters is determined through play. The retinue can be in a realistic, speculative, historical, or fantastic setting.
+_For the Queen_ stars characters who are on a journey with their beloved, and often terrible, Queen. They may or may not know why they were chosen or what will happen to them along the way. No one plays the Queen; players come to know her only through the eyes of the player characters, who love and serve her. Aside from those specifications, everything that happens to and exists around the characters is determined through play. The retinue can be in a realistic, speculative, historical, or fantastic setting.
 
 ## Authority
 
@@ -46,11 +46,11 @@ The X-Card was originally developed by John Stavropoulos and is adapted for use 
 
 ## Queen Cards
 
-For the Queen includes illustrated cards which feature a diverse set of Queens that players can use to inspire their own stories. Players can also opt out of selecting an illustration, and allow their Queen’s appearance to unfold in their minds, or draw on other materials instead.
+_For the Queen_ includes illustrated cards which feature a diverse set of Queens that players can use to inspire their own stories. Players can also opt out of selecting an illustration, and allow their Queen’s appearance to unfold in their minds, or draw on other materials instead.
 
 ## Pace of Play
 
-A session of For the Queen lasts approximately thirty minutes to two hours, but sessions have been known to go longer. Pacing depends on three variables:
+A session of _For the Queen_ lasts approximately thirty minutes to two hours, but sessions have been known to go longer. Pacing depends on three variables:
 
 - Where players shuffle the ending question card into the deck
   - They can choose to place it roughly in the middle, or shuffle it into the bottom half
@@ -59,6 +59,6 @@ A session of For the Queen lasts approximately thirty minutes to two hours, but 
 
 ## What Matters
 
-For the Queen is about relationships. Focus on the player characters’ subjective impressions of the Queen, their history with her, and how that impacts their relationships with others.
+_For the Queen_ is about relationships. Focus on the player characters’ subjective impressions of the Queen, their history with her, and how that impacts their relationships with others.
 
 To enjoy this game, listen to each other. Knowing that the world is being built around you as you go, be attentive to what your fellow players are saying, and incorporate it into your own answers.
