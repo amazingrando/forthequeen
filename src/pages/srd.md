@@ -1,5 +1,6 @@
 ---
 title: "SRD"
+language: "English"
 ---
 
 > _For the Queen_ is a game about love, duty, and devotion.
