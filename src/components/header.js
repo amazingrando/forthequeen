@@ -4,9 +4,9 @@ import { Link } from "gatsby"
 import logo from "../images/for-the-queen.svg"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHeart, faChessQueen } from "@fortawesome/pro-solid-svg-icons"
+import { faHeart, faChessQueen, faChess } from "@fortawesome/pro-solid-svg-icons"
 
-library.add(faHeart, faChessQueen)
+library.add(faHeart, faChessQueen, faChess)
 
 export default () => {
   return (
@@ -17,13 +17,13 @@ export default () => {
         grid-template-rows: auto;
         grid-template-areas:
           "logo logo"
-          "link1 link2";
+          "link1 link2 link3";
         padding: 1rem;
 
         @media (min-width: 650px) {
           grid-template-columns: 1fr auto auto;
           grid-template-rows: auto;
-          grid-template-areas: "logo link1 link2";
+          grid-template-areas: "logo link1 link2 link3";
           padding-left: 1rem;
           padding-right: 1rem;
         }
@@ -100,6 +100,10 @@ export default () => {
         to={`/srd`}
         css={css`
           grid-area: link2;
+
+          @media (min-width: 650px) {
+            margin-right: 2rem;
+          }
         `}
       >
         <FontAwesomeIcon
@@ -110,6 +114,21 @@ export default () => {
           `}
         />{" "}
         SRD
+      </Link>
+      <Link
+        to={`/games`}
+        css={css`
+          grid-area: link3;
+        `}
+      >
+        <FontAwesomeIcon
+          icon="chess"
+          css={css`
+            width: 30px;
+            height: 30px;
+          `}
+        />{" "}
+        Games
       </Link>
     </header>
   )
