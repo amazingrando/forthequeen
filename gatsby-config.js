@@ -55,5 +55,13 @@ module.exports = {
         www: false,
       },
     },
+    {
+      resolve: 'gatsby-source-google-sheets',
+      options: {
+        spreadsheetId: '1bkubC3K04PKg3OH0dQTf8ZRcMcZpmAQGwwiHxFgmgug',
+        worksheetTitle: 'Form Responses 1',
+        credentials: require('./src/env/For-The-Queen-3f3deedb6442.json')
+      }
+    },
   ],
 }
