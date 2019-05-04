@@ -3,7 +3,13 @@ import { graphql } from "gatsby"
 import { css } from "@emotion/core"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import LanguageSwitcher from '../components/language-switcher'
+import LanguageSwitcher from "../components/language-switcher"
+
+const insertLanguageSwitcher = language => {
+  if (language) {
+    return <LanguageSwitcher currentLanguage={language} />
+  }
+}
 
 export default ({ data }) => {
   const post = data.markdownRemark
@@ -64,8 +70,13 @@ export default ({ data }) => {
           }
         `}
       >
-        <h1>{post.frontmatter.title} <small>({`${post.frontmatter.language}`})</small></h1>
-        <LanguageSwitcher currentLanguage={post.frontmatter.language}/>
+        <h1>
+          {post.frontmatter.title}{" "}
+          {post.frontmatter.language && (
+            <small>({post.frontmatter.language})</small>
+          )}
+        </h1>
+        {insertLanguageSwitcher(post.frontmatter.language)}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>
