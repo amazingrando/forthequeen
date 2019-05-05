@@ -4,7 +4,11 @@ import { Link } from "gatsby"
 import logo from "../images/for-the-queen.svg"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHeart, faChessQueen, faChess } from "@fortawesome/pro-solid-svg-icons"
+import {
+  faHeart,
+  faChessQueen,
+  faChess,
+} from "@fortawesome/pro-solid-svg-icons"
 
 library.add(faHeart, faChessQueen, faChess)
 
@@ -13,14 +17,14 @@ export default () => {
     <header
       css={css`
         display: grid;
-        grid-template-columns: 1fr auto auto;
+        grid-template-columns: auto auto auto;
         grid-template-rows: auto;
         grid-template-areas:
-          "logo logo"
+          "logo logo logo"
           "link1 link2 link3";
         padding: 1rem;
 
-        @media (min-width: 650px) {
+        @media (min-width: 800px) {
           grid-template-columns: 1fr auto auto;
           grid-template-rows: auto;
           grid-template-areas: "logo link1 link2 link3";
@@ -32,6 +36,7 @@ export default () => {
           color: white;
           text-decoration: none;
           font-size: 1.5rem;
+          line-height: 1;
           transition: all 0.15s;
           align-self: center;
 
@@ -53,7 +58,7 @@ export default () => {
           grid-area: logo;
           text-align: center;
 
-          @media (min-width: 650px) {
+          @media (min-width: 800px) {
             justify-self: start;
             text-align: left;
           }
@@ -101,7 +106,7 @@ export default () => {
         css={css`
           grid-area: link2;
 
-          @media (min-width: 650px) {
+          @media (min-width: 800px) {
             margin-right: 2rem;
           }
         `}

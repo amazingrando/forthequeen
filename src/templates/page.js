@@ -25,7 +25,7 @@ export default ({ data }) => {
           box-shadow: 0 14px 18px 10px #57060e;
           text-align: left;
 
-          @media (min-width: 650px) {
+          @media (min-width: 800px) {
             margin-left: 1rem;
             margin-right: 1rem;
           }
@@ -66,6 +66,7 @@ export default ({ data }) => {
 
           figure img {
             max-width: 400px;
+            width: 100%;
             margin-bottom: 0;
           }
         `}
