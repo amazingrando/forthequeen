@@ -35,7 +35,7 @@ export default () => {
         a {
           color: white;
           text-decoration: none;
-          font-size: 1.5rem;
+          font-size: 1.3rem;
           line-height: 1;
           transition: all 0.15s;
           align-self: center;
@@ -46,6 +46,10 @@ export default () => {
 
           &[aria-current="page"] {
             color: #ddca4d;
+          }
+
+          @media (min-width: 800px) {
+            font-size: 1.5rem;
           }
         }
       `}
