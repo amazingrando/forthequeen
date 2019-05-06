@@ -72,16 +72,18 @@ export default ({ data }) => {
         >
           The following games are <em>Descended from the Queen</em>.
         </p>
-        {games.map(game => (
-          <Game
-            title={game.node.titleofyourgame}
-            author={game.node.author}
-            description={game.node.descriptionofthegame}
-            link={game.node.linktowherepeoplecanfindthegame}
-            status={game.node.status}
-            key={game.node.titleofyourgame + game.node.author}
-          />
-        ))}
+        {games
+          .filter(game => game.node.titleofyourgame !== "Placeholder")
+          .map(game => (
+            <Game
+              title={game.node.titleofyourgame}
+              author={game.node.author}
+              description={game.node.descriptionofthegame}
+              link={game.node.linktowherepeoplecanfindthegame}
+              status={game.node.status}
+              key={game.node.titleofyourgame + game.node.author}
+            />
+          ))}
 
         <h2>How to Add Your Game to this List</h2>
         <p>
