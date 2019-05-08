@@ -64,32 +64,34 @@ export default ({ data }) => {
           }
         `}
       >
-        <h1>Games</h1>
-        <p
-          css={css`
-            margin-bottom: 3rem;
-          `}
-        >
-          The following games are <em>Descended from the Queen</em>.
-        </p>
-        {games
-          .filter(game => game.node.titleofyourgame !== "Placeholder")
-          .map(game => (
-            <Game
-              title={game.node.titleofyourgame}
-              author={game.node.author}
-              description={game.node.descriptionofthegame}
-              link={game.node.linktowherepeoplecanfindthegame}
-              status={game.node.status}
-              key={game.node.titleofyourgame + game.node.author}
-            />
-          ))}
+        <div>
+          <h1>Games</h1>
+          <p
+            css={css`
+              margin-bottom: 3rem;
+            `}
+          >
+            The following games are <em>Descended from the Queen</em>.
+          </p>
+          {games
+            .filter(game => game.node.titleofyourgame !== "Placeholder")
+            .map(game => (
+              <Game
+                title={game.node.titleofyourgame}
+                author={game.node.author}
+                description={game.node.descriptionofthegame}
+                link={game.node.linktowherepeoplecanfindthegame}
+                status={game.node.status}
+                key={game.node.titleofyourgame + game.node.author}
+              />
+            ))}
 
-        <h2>How to Add Your Game to this List</h2>
-        <p>
-          <a href="https://forms.gle/GCFbNZDyLC6tmrRG7">Fill out our form</a>{" "}
-          and after a review, we'll add it to the list.{" "}
-        </p>
+          <h2>How to Add Your Game to this List</h2>
+          <p>
+            <a href="https://forms.gle/GCFbNZDyLC6tmrRG7">Fill out our form</a>{" "}
+            and after a review, we'll add it to the list.{" "}
+          </p>
+        </div>
       </div>
     </Layout>
   )
