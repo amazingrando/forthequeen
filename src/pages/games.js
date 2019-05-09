@@ -74,14 +74,14 @@ export default ({ data }) => {
             The following games are <em>Descended from the Queen</em>.
           </p>
           {games
-            .filter(game => game.node.titleofyourgame !== "Placeholder")
+            .filter(game => game.node.donotaddtosite !== "Y")
             .map(game => (
               <Game
                 title={game.node.titleofyourgame}
                 author={game.node.author}
                 description={game.node.descriptionofthegame}
                 link={game.node.linktowherepeoplecanfindthegame}
-                status={game.node.status}
+                status={game.node.gamestatus}
                 key={game.node.titleofyourgame + game.node.author}
               />
             ))}
@@ -108,6 +108,7 @@ export const query = graphql`
           descriptionofthegame
           linktowherepeoplecanfindthegame
           gamestatus
+          donotaddtosite
         }
       }
     }

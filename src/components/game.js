@@ -33,7 +33,11 @@ class Game extends React.Component {
             <em>By {this.props.author}</em>
           </p>
         )}
-        {this.props.status && <p>Status: {this.props.status}</p>}
+        {this.props.status && (
+          <p>
+            <strong>Status:</strong> {this.props.status}
+          </p>
+        )}
 
         {this.props.description && <p>{this.props.description}</p>}
 
