@@ -24,7 +24,7 @@
     "gatsby-plugin-sharp": "^2.6.39",
     "gatsby-plugin-typography": "^2.3.11",
     "gatsby-source-filesystem": "^2.1.30",
-    "gatsby-source-google-sheets": "https://github.com/amazingrando/gatsby-source-google-sheets",
+    "gatsby-source-google-sheets": "^1.1.1",
     "gatsby-transformer-remark": "^2.6.27",
     "gatsby-transformer-sharp": "^2.2.20",
     "npm-check-updates": "^4.0.1",
