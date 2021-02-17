@@ -1,5 +1,5 @@
 import React from "react"
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 import { Link } from "gatsby"
 import logo from "../images/for-the-queen.svg"
 import { library } from "@fortawesome/fontawesome-svg-core"
