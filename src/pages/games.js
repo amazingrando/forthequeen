@@ -2,11 +2,10 @@ import React from "react"
 import { css } from "@emotion/react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { graphql } from "gatsby"
+import gameData from '../utils/data.json'
 import Game from "../components/game"
 
-export default ({ data }) => {
-  const games = data.allGoogleSheetFormResponses1Row.edges
+export default () => {
 
   return (
     <Layout>
@@ -73,18 +72,16 @@ export default ({ data }) => {
           >
             The following games are <em>Descended from the Queen</em>.
           </p>
-          {games
-            .filter(game => game.node.donotaddtosite !== "Y")
-            .map(game => (
-              <Game
-                title={game.node.titleofyourgame}
-                author={game.node.author}
-                description={game.node.descriptionofthegame}
-                link={game.node.linktowherepeoplecanfindthegame}
-                status={game.node.gamestatus}
-                key={game.node.titleofyourgame + game.node.author}
-              />
-            ))}
+          {gameData.map(gameItem => (
+            <Game
+              title={gameItem['Title of your game']}
+              author={gameItem['Author']}
+              description={gameItem['Description of the game.']}
+              link={gameItem['Link to where people can find the game']}
+              status={gameItem['Game status']}
+              key={gameItem['Title of your game'] + gameItem['Author']}
+          />
+          ))}
 
           <h2>How to Add Your Game to this List</h2>
           <p>
@@ -96,21 +93,3 @@ export default ({ data }) => {
     </Layout>
   )
 }
-
-export const query = graphql`
-  {
-    allGoogleSheetFormResponses1Row {
-      edges {
-        node {
-          id
-          titleofyourgame
-          author
-          descriptionofthegame
-          linktowherepeoplecanfindthegame
-          gamestatus
-          donotaddtosite
-        }
-      }
-    }
-  }
-`
