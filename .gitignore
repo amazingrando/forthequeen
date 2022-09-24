@@ -68,4 +68,4 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-src/env/For-The-Queen-3f3deedb6442.json
+src/env/config.json
