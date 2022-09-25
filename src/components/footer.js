@@ -1,7 +1,7 @@
 import React from "react"
 import { css } from "@emotion/react"
 
-export default () => {
+const footer = () => {
   return (
     <footer
       css={css`
@@ -27,3 +27,5 @@ export default () => {
     </footer>
   )
 }
+
+export default footer;

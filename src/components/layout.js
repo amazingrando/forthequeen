@@ -3,12 +3,14 @@ import { css } from "@emotion/react"
 import Header from "./header"
 import Footer from "./footer"
 import SEO from "./seo"
+import backgroundPattern from "../images/background-pattern.jpg"
 
-export default ({ children }) => (
+const Layout = ({ children }) => (
   <div
     css={css`
       margin: 0 auto;
       max-width: 1000px;
+      background: url(${backgroundPattern});
     `}
   >
     <SEO />
@@ -17,3 +19,5 @@ export default ({ children }) => (
     <Footer />
   </div>
 )
+
+export default Layout;

@@ -1,61 +1,31 @@
-require('dotenv').config()
-
 module.exports = {
   siteMetadata: {
     title: `For The Queen SRD`,
     description: `For The Queen system reference document and licensing information.`,
     twitterUsername: `@evilhatofficial`,
-    url: "https://forthequeengame.com",
+    siteUrl: "https://forthequeengame.com",
     image: "/sharing.png",
   },
-  plugins: [
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
-      },
+  plugins: [{
+    resolve: 'gatsby-plugin-google-analytics',
+    options: {
+      "trackingId": "UA-7197503-6"
+    }
+  }, {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      "name": "pages",
+      "path": "./src/pages/"
     },
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-emotion`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
+    __key: "pages"
+  },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `images`,
+      path: `${__dirname}/src/images`,
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-favicon`,
-      options: {
-        logo: "./src/favicon.png",
-        dir: "auto",
-        lang: "en-US",
-        theme_color: "#663399",
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-7197503-6",
-        respectDNT: false,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-htaccess",
-      options: {
-        https: true,
-        www: false,
-      },
-    },
-  ],
-}
+  },
+  `gatsby-plugin-emotion`,
+  "gatsby-transformer-remark"]
+};

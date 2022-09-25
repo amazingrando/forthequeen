@@ -12,7 +12,7 @@ import {
 
 library.add(faHeart, faChessQueen, faChess)
 
-export default () => {
+const header = () => {
   return (
     <header
       css={css`
@@ -142,3 +142,5 @@ export default () => {
     </header>
   )
 }
+
+export default header;

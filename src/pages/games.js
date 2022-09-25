@@ -1,15 +1,26 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { css } from "@emotion/react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import gameData from '../utils/data.json'
 import Game from "../components/game"
 
-export default () => {
+const GamesPage = () => {
+  const [games, setGames] = useState([]);
 
+  useEffect(() => {
+    if (!!games) {
+      fetch(
+        "https://opensheet.elk.sh/1bkubC3K04PKg3OH0dQTf8ZRcMcZpmAQGwwiHxFgmgug/Form-Responses-1"
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setGames(data);
+        });
+    }
+  }, [games]) 
+  
   return (
     <Layout>
-      <SEO />
       <div
         css={css`
           background: white;
@@ -72,24 +83,30 @@ export default () => {
           >
             The following games are <em>Descended from the Queen</em>.
           </p>
-          {gameData.map(gameItem => (
-            <Game
-              title={gameItem['Title of your game']}
-              author={gameItem['Author']}
-              description={gameItem['Description of the game.']}
-              link={gameItem['Link to where people can find the game']}
-              status={gameItem['Game status']}
-              key={gameItem['Title of your game'] + gameItem['Author']}
-          />
-          ))}
+          {games && games.filter(game => game['Do not add to site'] !== "Y").map(game => (
+          <Game
+              title={game['Title of your game']}
+              author={game['Author']}
+              description={game['Description of the game.']}
+              link={game['Link to where people can find the game']}
+              status={game['Game status']}
+              key={game['Title of your game'] + game['Author']}
+          />))}
+            
 
           <h2>How to Add Your Game to this List</h2>
           <p>
             <a href="https://forms.gle/GCFbNZDyLC6tmrRG7">Fill out our form</a>{" "}
             and after a review, we'll add it to the list.{" "}
-          </p>
+          </p> 
         </div>
       </div>
     </Layout>
   )
 }
+
+export const Head = () => (
+  <SEO/>
+)
+
+export default GamesPage;

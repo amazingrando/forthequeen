@@ -11,12 +11,11 @@ const insertLanguageSwitcher = language => {
   }
 }
 
-export default ({ data }) => {
+const pageTemplate = ({ data }) => {
   const post = data.markdownRemark
 
   return (
     <Layout>
-      <SEO />
       <div
         css={css`
           background: white;
@@ -95,3 +94,9 @@ export const query = graphql`
     }
   }
 `
+
+export default pageTemplate
+
+export const Head = () => (
+  <SEO/>
+)
