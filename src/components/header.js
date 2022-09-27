@@ -1,146 +1,144 @@
-import React from "react"
-import { css } from "@emotion/react"
-import { Link } from "gatsby"
-import logo from "../images/for-the-queen.svg"
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import React from 'react';
+import { css } from '@emotion/react';
+import { Link } from 'gatsby';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHeart,
   faChessQueen,
   faChess,
-} from "@fortawesome/pro-solid-svg-icons"
+} from '@fortawesome/pro-solid-svg-icons';
+import logo from '../images/for-the-queen.svg';
 
-library.add(faHeart, faChessQueen, faChess)
+library.add(faHeart, faChessQueen, faChess);
 
-const header = () => {
-  return (
-    <header
-      css={css`
-        display: grid;
-        grid-template-columns: auto auto auto;
+const Header = () => (
+  <header
+    css={css`
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto;
+      grid-template-areas:
+        'logo logo logo'
+        'link1 link2 link3';
+      padding: 1rem;
+
+      @media (min-width: 800px) {
+        grid-template-columns: 1fr auto auto;
         grid-template-rows: auto;
-        grid-template-areas:
-          "logo logo logo"
-          "link1 link2 link3";
-        padding: 1rem;
+        grid-template-areas: 'logo link1 link2 link3';
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
 
-        @media (min-width: 800px) {
-          grid-template-columns: 1fr auto auto;
-          grid-template-rows: auto;
-          grid-template-areas: "logo link1 link2 link3";
-          padding-left: 1rem;
-          padding-right: 1rem;
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.3rem;
+        line-height: 1;
+        transition: all 0.15s;
+        align-self: center;
+
+        &:hover {
+          color: #ddca4d;
         }
 
-        a {
-          color: white;
-          text-decoration: none;
-          font-size: 1.3rem;
-          line-height: 1;
-          transition: all 0.15s;
-          align-self: center;
+        &[aria-current='page'] {
+          color: #ddca4d;
+        }
 
-          &:hover {
-            color: #ddca4d;
-          }
+        @media (min-width: 800px) {
+          font-size: 1.5rem;
+        }
+      }
+    `}
+  >
+    <Link
+      to="/"
+      css={css`
+        justify-self: center;
+        width: 100%;
+        grid-area: logo;
+        text-align: center;
 
-          &[aria-current="page"] {
-            color: #ddca4d;
-          }
-
-          @media (min-width: 800px) {
-            font-size: 1.5rem;
-          }
+        @media (min-width: 800px) {
+          justify-self: start;
+          text-align: left;
         }
       `}
     >
-      <Link
-        to={`/`}
+      <img
+        src={logo}
+        alt="For the Queen Logo"
         css={css`
-          justify-self: center;
+          filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.9));
+          max-width: 300px;
           width: 100%;
-          grid-area: logo;
-          text-align: center;
+          min-height: 100px;
+          margin-bottom: 0;
+          transition: all 0.15s;
+          transform: scale(1);
 
-          @media (min-width: 800px) {
-            justify-self: start;
-            text-align: left;
+          &:hover {
+            transform: scale(1.1);
           }
         `}
-      >
-        <img
-          src={logo}
-          alt="For the Queen Logo"
-          css={css`
-            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.9));
-            max-width: 300px;
-            width: 100%;
-            min-height: 100px;
-            margin-bottom: 0;
-            transition: all 0.15s;
-            transform: scale(1);
+      />
+    </Link>
+    <Link
+      to="/"
+      css={css`
+        grid-area: link1;
 
-            &:hover {
-              transform: scale(1.1);
-            }
-          `}
-        />
-      </Link>
-      <Link
-        to={`/`}
+        @media (min-width: 650px) {
+          margin-right: 2rem;
+        }
+      `}
+    >
+      <FontAwesomeIcon
+        icon="chess-queen"
         css={css`
-          grid-area: link1;
-
-          @media (min-width: 650px) {
-            margin-right: 2rem;
-          }
+          width: 30px;
+          height: 30px;
         `}
-      >
-        <FontAwesomeIcon
-          icon="chess-queen"
-          css={css`
-            width: 30px;
-            height: 30px;
-          `}
-        />{" "}
-        Licensing
-      </Link>
-      <Link
-        to={`/srd`}
+      />{' '}
+      Licensing
+    </Link>
+    <Link
+      to="/srd"
+      css={css`
+        grid-area: link2;
+
+        @media (min-width: 800px) {
+          margin-right: 2rem;
+        }
+      `}
+    >
+      <FontAwesomeIcon
+        icon="heart"
         css={css`
-          grid-area: link2;
-
-          @media (min-width: 800px) {
-            margin-right: 2rem;
-          }
+          width: 30px;
+          height: 30px;
         `}
-      >
-        <FontAwesomeIcon
-          icon="heart"
-          css={css`
-            width: 30px;
-            height: 30px;
-          `}
-        />{" "}
-        SRD
-      </Link>
-      <Link
-        to={`/games`}
+      />{' '}
+      SRD
+    </Link>
+    <Link
+      to="/games"
+      css={css`
+        grid-area: link3;
+      `}
+    >
+      <FontAwesomeIcon
+        icon="chess"
         css={css`
-          grid-area: link3;
+          width: 30px;
+          height: 30px;
         `}
-      >
-        <FontAwesomeIcon
-          icon="chess"
-          css={css`
-            width: 30px;
-            height: 30px;
-          `}
-        />{" "}
-        Games
-      </Link>
-    </header>
-  )
-}
+      />{' '}
+      Games
+    </Link>
+  </header>
+);
 
-export default header;
+export default Header;

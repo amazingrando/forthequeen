@@ -1,18 +1,12 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { css } from "@emotion/react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import LanguageSwitcher from "../components/language-switcher"
-
-const insertLanguageSwitcher = language => {
-  if (language) {
-    return <LanguageSwitcher currentLanguage={language} />
-  }
-}
+import React from 'react';
+import { graphql } from 'gatsby';
+import { css } from '@emotion/react';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import LanguageSwitcher from '../components/language-switcher';
 
 const pageTemplate = ({ data }) => {
-  const post = data.markdownRemark
+  const post = data.markdownRemark;
 
   return (
     <Layout>
@@ -30,7 +24,7 @@ const pageTemplate = ({ data }) => {
           }
 
           &::after {
-            content: "";
+            content: '';
             border: 1px solid #ddca4d;
             position: absolute;
             top: 1.2rem;
@@ -41,7 +35,7 @@ const pageTemplate = ({ data }) => {
           }
 
           &::before {
-            content: "";
+            content: '';
             border: 2px solid #ddca4d;
             position: absolute;
             top: 1rem;
@@ -71,20 +65,20 @@ const pageTemplate = ({ data }) => {
         `}
       >
         <h1>
-          {post.frontmatter.title}{" "}
+          {post.frontmatter.title}{' '}
           {post.frontmatter.language && (
             <small>({post.frontmatter.language})</small>
           )}
         </h1>
-        {insertLanguageSwitcher(post.frontmatter.language)}
+        <LanguageSwitcher currentLanguage={post.frontmatter.language} />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
@@ -93,10 +87,8 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default pageTemplate
+export default pageTemplate;
 
-export const Head = () => (
-  <SEO/>
-)
+export const Head = () => <SEO />;

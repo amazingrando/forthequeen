@@ -1,38 +1,36 @@
-import React from "react"
-import { css } from "@emotion/react"
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+import React from 'react';
+import { css } from '@emotion/react';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 const Languages = [
-  { language: "English", url: "srd" },
-  { language: "French", url: "srd-french" },
-]
+  { language: 'English', url: 'srd' },
+  { language: 'French', url: 'srd-french' },
+];
 
-class LanguageSwitcher extends React.Component {
-  static propTypes = {
-    currentLanguage: PropTypes.string,
-  }
+const LanguageSwitcher = ({ currentLanguage }) => (
+  <div
+    css={css`
+      margin-top: -1rem;
+      font-size: 0.8rem;
+      margin-bottom: 2rem;
+      display: ${currentLanguage ? 'block' : 'none'};
+    `}
+  >
+    Translations: {console.log(Languages)}
+    {Languages.filter(
+      (translation) => translation.language !== currentLanguage
+    ).map((translation) => (
+      <Link to={`/${translation.url}`} key={translation.url}>
+        {`${translation.language}`}
+        {console.log(translation)}
+      </Link>
+    ))}
+  </div>
+);
 
-  render() {
-    return (
-      <div
-        css={css`
-          margin-top: -1rem;
-          font-size: 0.8rem;
-          margin-bottom: 2rem;
-        `}
-      >
-        Translations:{" "}
-        {Languages.filter(
-          translation => translation.language !== this.props.currentLanguage
-        ).map(translation => (
-          <Link to={`/${translation.url}`} key={translation.url}>{`${
-            translation.language
-          }`}</Link>
-        ))}
-      </div>
-    )
-  }
-}
+LanguageSwitcher.propTypes = {
+  currentLanguage: PropTypes.string,
+};
 
-export default LanguageSwitcher
+export default LanguageSwitcher;
