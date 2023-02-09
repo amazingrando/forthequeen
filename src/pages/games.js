@@ -1,33 +1,38 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { css } from '@emotion/react';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
-import gameList from '../data/gameList.json';
 import Game from '../components/game';
 
-const GamesPage = () => {
-  const [gameDisplayList, setGameDisplayList] = useState(gameList);
+const GamesPage = ({ data }) => {
+  const gameData = data.allGoogleSpreadsheetGamesFormResponses1.edges;
+  const [gameDisplayList, setGameDisplayList] = useState(gameData);
+  const [activeFilter, setActiveFilter] = useState('');
 
-  const buttonStyles = css`
+  const buttonStyles = (text) => css`
     padding: 0.25rem 0.5rem;
-    background: #ddca4d;
+    background: ${activeFilter === text ? '#890718' : '#ddca4d'};
+    color: ${activeFilter === text ? '#fff' : '#202027'};
     border: none;
     padding: 0.3rem 1rem;
     text-decoration: none;
     border-radius: 0.3rem;
 
     &:hover {
-      background: #ccba45;
+      background: ${activeFilter === text ? '#740514' : '#ccba45'};
     }
   `;
 
   const handleClick = (filter) => {
-    if (filter === 'All') {
-      setGameDisplayList(gameList);
-    } else {
+    if (filter !== 'All') {
       setGameDisplayList(
-        gameList.filter((game) => game['Game status'] === filter)
+        gameData.filter((game) => game.node.gameStatus === filter)
       );
+      setActiveFilter(filter);
+    } else {
+      setGameDisplayList(gameData);
+      setActiveFilter('');
     }
   };
 
@@ -111,7 +116,7 @@ const GamesPage = () => {
               onClick={() => {
                 handleClick('Released');
               }}
-              css={buttonStyles}
+              css={buttonStyles('Released')}
             >
               Released
             </button>
@@ -120,7 +125,7 @@ const GamesPage = () => {
               onClick={() => {
                 handleClick('Playtesting');
               }}
-              css={buttonStyles}
+              css={buttonStyles('Playtesting')}
             >
               Playtesting
             </button>
@@ -129,7 +134,7 @@ const GamesPage = () => {
               onClick={() => {
                 handleClick('In Development');
               }}
-              css={buttonStyles}
+              css={buttonStyles('In Development')}
             >
               In Development
             </button>
@@ -138,7 +143,7 @@ const GamesPage = () => {
               onClick={() => {
                 handleClick('All');
               }}
-              css={buttonStyles}
+              css={buttonStyles('All')}
             >
               All
             </button>
@@ -148,12 +153,12 @@ const GamesPage = () => {
               .filter((game) => game['Do not add to site'] !== 'Y')
               .map((game) => (
                 <Game
-                  title={game['Title of your game']}
-                  author={game.Author}
-                  description={game['Description of the game.']}
-                  link={game['Link to where people can find the game']}
-                  status={game['Game status']}
-                  key={game['Title of your game'] + Math.random() * 100000}
+                  title={game.node.titleOfYourGame}
+                  author={game.node.author}
+                  description={game.node.descriptionOfTheGame}
+                  link={game.node.linkToWherePeopleCanFindTheGame}
+                  status={game.node.gameStatus}
+                  key={game.node.titleOfYourGame + Math.random() * 100000}
                 />
               ))}
           <h2>How to Add Your Game to this List</h2>
@@ -166,5 +171,26 @@ const GamesPage = () => {
     </Layout>
   );
 };
+
+GamesPage.propTypes = {
+  data: PropTypes.any,
+};
+
+export const query = graphql`
+  query {
+    allGoogleSpreadsheetGamesFormResponses1 {
+      edges {
+        node {
+          author
+          descriptionOfTheGame
+          emailAddress
+          gameStatus
+          linkToWherePeopleCanFindTheGame
+          titleOfYourGame
+        }
+      }
+    }
+  }
+`;
 
 export default GamesPage;
