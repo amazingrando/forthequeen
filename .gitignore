@@ -69,3 +69,5 @@ yarn-error.log
 .yarn-integrity
 
 src/env/config.json
+# Local Netlify folder
+.netlify
