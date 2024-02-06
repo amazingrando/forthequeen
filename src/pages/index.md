@@ -43,11 +43,11 @@ You have the right to create new works derived from the SRD.
 
 The biggest requirement for anything you do based on our work is attribution; you must give us credit for our work. The next section goes into detail on how you should do that.
 
-Second, you can’t imply or state that Alex Roberts or Evil Hat Publications is endorsing or sponsoring you unless we’ve made a special arrangement with you. Don’t use the Evil Hat logo or the _For the Queen_ logo without talking to us first. There is a _Descended From the Queen_ logo you can use very easily, though; see above. Also, don't use the name _For the Queen_ in the title of your product.
+Second, you can’t imply or state that Alex Roberts is endorsing or sponsoring you unless we’ve made a special arrangement with you. Don’t use the _For the Queen_ logo without talking to Alex first. There is a _Descended From the Queen_ logo you can use very easily, though; see above. Also, don't use the name _For the Queen_ in the title of your product.
 
 Third, you may not use any material from _For the Queen_ that is not in the SRD content -- including but not limited to the specific prompts and artwork. You must create your own original material using the _For the Queen_ system as a base.
 
-Finally, you can’t use the SRD to make something which would be prejudicial to Evil Hat Productions or Alex Robert's honor or reputation. (That’s exactly how the legal license puts it!) We’re not sure how you’d do that, but don’t.
+Finally, you can’t use the SRD to make something which would be prejudicial to Alex Roberts’ honor or reputation. (That’s exactly how the legal license puts it!)
 
 That’s all the legal stuff. As always, if you’re unsure about exactly what to do or if you’re investing a lot of money in publishing something based on our work, think about talking to a lawyer.
 
@@ -60,11 +60,11 @@ So, how do you give us credit for our work?
 This is really simple. Wherever you put your own copyright, add the following text:
 
 <div class="well">
-This work is based on <em>For the Queen</em> (found at http://www.forthequeengame.com/), product of Alex Roberts and Evil Hat Productions, and licensed for our use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
+This work is based on <em>For the Queen</em> (found at http://www.forthequeengame.com/), a product of Alex Roberts, and licensed for our use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
 </div>
 
 All the text has to be the same size as the rest of your copyright section — that’s one of the license requirements.
 
-If you’re publishing electronically, you can make “Creative Commons Attribution 3.0 Unported license” a link to https://creativecommons.org/licenses/by/3.0 and “_For the Queen_” a link to http://www.forthequeengame.com/, instead of printing the URLs separately.
+If you’re publishing electronically, you can make “Creative Commons Attribution 3.0 Unported license” a link to <https://creativecommons.org/licenses/by/3.0> and “_For the Queen_” a link to <http://www.forthequeengame.com/>, instead of printing the URLs separately.
 
 That’s it!
