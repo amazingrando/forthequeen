@@ -20,9 +20,7 @@ const Footer = () => (
     `}
   >
     For the Queen is published by{' '}
-    <a href="https://www.evilhat.com/home/for-the-queen/">
-      Evil Hat Productions
-    </a>
+    <a href="https://darringtonpress.com/">Darrington Press</a>
   </footer>
 );
 
