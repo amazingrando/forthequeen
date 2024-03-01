@@ -28,6 +28,7 @@
     "gatsby-plugin-emotion": "^7.24.0",
     "gatsby-plugin-google-analytics": "^4.24.0",
     "gatsby-source-filesystem": "^4.24.0",
+    "gatsby-transformer-csv": "^4.25.0",
     "gatsby-transformer-remark": "^5.24.0",
     "googleapis": "^108.0.0",
     "prop-types": "^15.8.1",
