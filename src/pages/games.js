@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { css } from '@emotion/react';
+import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
-import gameList from '../data/gameList.json';
 import Game from '../components/game';
 
-const GamesPage = () => {
+const GamesPage = ({ data }) => {
+  const gameList = data.allDescendedFromTheQueenGameResponsesCsv.nodes;
   const [gameDisplayList, setGameDisplayList] = useState(gameList);
 
   const buttonStyles = css`
@@ -25,9 +25,7 @@ const GamesPage = () => {
     if (filter === 'All') {
       setGameDisplayList(gameList);
     } else {
-      setGameDisplayList(
-        gameList.filter((game) => game['Game status'] === filter)
-      );
+      setGameDisplayList(gameList.filter((game) => game.field7 === filter));
     }
   };
 
@@ -145,15 +143,16 @@ const GamesPage = () => {
           </p>
           {gameDisplayList &&
             gameDisplayList
-              .filter((game) => game['Do not add to site'] !== 'Y')
+              .filter((game) => game.field2 !== 'Y')
+              .filter((game) => game.field2 !== 'Do not add to site')
               .map((game) => (
                 <Game
-                  title={game['Title of your game']}
-                  author={game.Author}
-                  description={game['Description of the game.']}
-                  link={game['Link to where people can find the game']}
-                  status={game['Game status']}
-                  key={game['Title of your game'] + Math.random() * 100000}
+                  title={game.field3}
+                  author={game.field6}
+                  description={game.field4}
+                  link={game.field5}
+                  status={game.field7}
+                  key={game.field3 + Math.random() * 100000}
                 />
               ))}
           <h2>How to Add Your Game to this List</h2>
@@ -166,5 +165,22 @@ const GamesPage = () => {
     </Layout>
   );
 };
+
+export const query = graphql`
+  query {
+    allDescendedFromTheQueenGameResponsesCsv {
+      nodes {
+        field1
+        field2
+        field3
+        field4
+        field5
+        field6
+        field7
+        field8
+      }
+    }
+  }
+`;
 
 export default GamesPage;
