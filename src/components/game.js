@@ -46,7 +46,7 @@ const Game = ({ title, author, description, link, status }) => (
               background: #ccba45;
             }
           `}
-          href={link}
+          href={link && !link.match(/^https?:\/\//) ? `https://${link}` : link}
         >
           Learn More
         </a>
