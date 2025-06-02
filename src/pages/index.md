@@ -60,11 +60,11 @@ So, how do you give us credit for our work?
 This is really simple. Wherever you put your own copyright, add the following text:
 
 <div class="well">
-This work is based on <em>For the Queen</em> (found at http://www.forthequeengame.com/), a product of Alex Roberts, and licensed for our use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
+This work is based on <em>For the Queen</em> (found at https://www.forthequeengame.com/), a product of Alex Roberts, and licensed for our use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
 </div>
 
 All the text has to be the same size as the rest of your copyright section — that’s one of the license requirements.
 
-If you’re publishing electronically, you can make “Creative Commons Attribution 3.0 Unported license” a link to <https://creativecommons.org/licenses/by/3.0> and “_For the Queen_” a link to <http://www.forthequeengame.com/>, instead of printing the URLs separately.
+If you’re publishing electronically, you can make “Creative Commons Attribution 3.0 Unported license” a link to <https://creativecommons.org/licenses/by/3.0> and “_For the Queen_” a link to <https://www.forthequeengame.com/>, instead of printing the URLs separately.
 
 That’s it!
