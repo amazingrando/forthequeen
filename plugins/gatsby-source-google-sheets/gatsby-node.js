@@ -9,7 +9,11 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }, plu
   }
 
   if (!credentials) {
-    throw new Error('credentials are required for gatsby-source-google-sheets');
+    console.log('⚠️  No Google credentials provided. Skipping Google Sheets data fetch.');
+    console.log('📋 To enable Google Sheets integration:');
+    console.log('   1. Set GOOGLE_SERVICE_ACCOUNT_CREDENTIALS environment variable');
+    console.log('   2. Set GOOGLE_SHEET_ID environment variable');
+    return;
   }
 
   try {
