@@ -71,3 +71,5 @@ yarn-error.log
 src/env/config.json
 # Local Netlify folder
 .netlify
+
+credentials.json

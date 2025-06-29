@@ -1,0 +1,9 @@
+{
+  "name": "gatsby-source-google-sheets",
+  "version": "1.0.0",
+  "description": "Gatsby source plugin for Google Sheets",
+  "main": "gatsby-node.js",
+  "dependencies": {
+    "googleapis": "^144.0.0"
+  }
+}
