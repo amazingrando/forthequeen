@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: `For The Queen SRD`,
@@ -36,10 +38,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-csv`,
+      resolve: 'gatsby-source-google-sheets',
       options: {
-        noheader: true,
-      },
+        spreadsheetId: process.env.GOOGLE_SHEET_ID,
+        credentials: require('./credentials.json'),
+        range: 'A:H'
+      }
     },
     `gatsby-plugin-emotion`,
     'gatsby-transformer-remark',

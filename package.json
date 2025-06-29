@@ -14,7 +14,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "setup-google-sheets": "node setup-google-sheets.js"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -24,6 +25,7 @@
     "@fortawesome/pro-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@google-cloud/local-auth": "^3.0.1",
+    "dotenv": "^17.0.0",
     "gatsby": "^5.14.0",
     "gatsby-plugin-emotion": "^8.14.0",
     "gatsby-plugin-google-analytics": "^5.14.0",

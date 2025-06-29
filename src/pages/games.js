@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 import Game from '../components/game';
 
 const GamesPage = ({ data }) => {
-  const gameList = data.allDescendedFromTheQueenGameResponsesCsv.nodes;
+  const gameList = data.allGoogleSheet.nodes;
   const [gameDisplayList, setGameDisplayList] = useState(gameList);
 
   const buttonStyles = css`
@@ -25,7 +25,7 @@ const GamesPage = ({ data }) => {
     if (filter === 'All') {
       setGameDisplayList(gameList);
     } else {
-      setGameDisplayList(gameList.filter((game) => game.field7 === filter));
+      setGameDisplayList(gameList.filter((game) => game.Game_status === filter));
     }
   };
 
@@ -141,18 +141,19 @@ const GamesPage = ({ data }) => {
               All
             </button>
           </p>
+          {console.log(gameDisplayList)}
           {gameDisplayList &&
             gameDisplayList
-              .filter((game) => game.field2 !== 'Y')
-              .filter((game) => game.field2 !== 'Do not add to site')
+              .filter((game) => game.Do_not_add_to_site !== 'Y')
+              .filter((game) => game.Do_not_add_to_site !== 'Do not add to site')
               .map((game) => (
                 <Game
-                  title={game.field3}
-                  author={game.field6}
-                  description={game.field4}
-                  link={game.field5}
-                  status={game.field7}
-                  key={game.field3 + Math.random() * 100000}
+                  title={game.Title_of_your_game}
+                  author={game.Author}
+                  description={game.Description_of_the_game}
+                  link={game.Link_to_where_people_can_find_the_game}
+                  status={game.Game_status}
+                  key={game.Title_of_your_game + Math.random() * 100000}
                 />
               ))}
           <h2>How to Add Your Game to this List</h2>
@@ -168,16 +169,16 @@ const GamesPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allDescendedFromTheQueenGameResponsesCsv {
+    allGoogleSheet {
       nodes {
-        field1
-        field2
-        field3
-        field4
-        field5
-        field6
-        field7
-        field8
+        Timestamp
+        Do_not_add_to_site
+        Title_of_your_game
+        Description_of_the_game
+        Link_to_where_people_can_find_the_game
+        Author
+        Game_status
+        Email_Address
       }
     }
   }
