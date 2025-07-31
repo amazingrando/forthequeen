@@ -1,0 +1,31 @@
+name: Create Branch with DateTime Name
+
+on:
+  workflow_dispatch:
+    inputs:
+      prefix:
+        description: "Branch name prefix"
+        required: false
+        default: "auto-branch"
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout default branch
+        uses: actions/checkout@v4
+
+      - name: Get datetime and format branch name
+        id: date
+        run: |
+          TIMESTAMP=$(date -u +"%Y%m%d-%H%M%S")
+          BRANCH_NAME="${{ github.event.inputs.prefix || 'addGame' }}/$TIMESTAMP"
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+          echo "Branch to be created: $BRANCH_NAME"
+
+      - name: Create new branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH_NAME"
+          git push origin "$BRANCH_NAME"
