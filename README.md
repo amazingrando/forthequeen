@@ -1,3 +1,4 @@
+[![](https://github.com/amazingrando/amazingrando/blob/master/assets/amazing-rando-badge.svg)](https://amazingrando.com)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fbe86879-f7e5-447e-be98-ccdf4d3d39c3/deploy-status)](https://app.netlify.com/sites/forthequeen/deploys)
 
 # For the Queen System Reference Document Website
