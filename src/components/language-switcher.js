@@ -19,7 +19,7 @@ const LanguageSwitcher = ({ currentLanguage }) => (
   >
     Translations: {console.log(Languages)}
     {Languages.filter(
-      (translation) => translation.language !== currentLanguage
+      (translation) => translation.language !== currentLanguage,
     ).map((translation) => (
       <Link to={`/${translation.url}`} key={translation.url}>
         {`${translation.language}`}

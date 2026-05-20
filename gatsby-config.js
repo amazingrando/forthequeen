@@ -41,11 +41,11 @@ module.exports = {
       resolve: 'gatsby-source-google-sheets',
       options: {
         spreadsheetId: process.env.GOOGLE_SHEET_ID,
-        credentials: process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS ? 
-          JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS) : 
-          null,
-        range: 'A:H'
-      }
+        credentials: process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS
+          ? JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS)
+          : null,
+        range: 'A:H',
+      },
     },
     `gatsby-plugin-emotion`,
     'gatsby-transformer-remark',

@@ -4,6 +4,6 @@
   "description": "Gatsby source plugin for Google Sheets",
   "main": "gatsby-node.js",
   "dependencies": {
-    "googleapis": "^144.0.0"
+    "googleapis": "^154.1.0"
   }
 }

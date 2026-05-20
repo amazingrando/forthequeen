@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { css } from '@emotion/react';
 import { graphql } from 'gatsby';
@@ -25,7 +26,9 @@ const GamesPage = ({ data }) => {
     if (filter === 'All') {
       setGameDisplayList(gameList);
     } else {
-      setGameDisplayList(gameList.filter((game) => game.Game_status === filter));
+      setGameDisplayList(
+        gameList.filter((game) => game.Game_status === filter),
+      );
     }
   };
 
@@ -145,7 +148,9 @@ const GamesPage = ({ data }) => {
           {gameDisplayList &&
             gameDisplayList
               .filter((game) => game.Do_not_add_to_site !== 'Y')
-              .filter((game) => game.Do_not_add_to_site !== 'Do not add to site')
+              .filter(
+                (game) => game.Do_not_add_to_site !== 'Do not add to site',
+              )
               .map((game) => (
                 <Game
                   title={game.Title_of_your_game}
