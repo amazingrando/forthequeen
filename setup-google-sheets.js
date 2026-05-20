@@ -29,20 +29,26 @@ console.log('   - Download the JSON file');
 console.log('   - This file should contain "type": "service_account"');
 console.log('');
 console.log('5. Create credentials.json:');
-console.log('   - Copy the downloaded service account JSON file to the root of this project');
+console.log(
+  '   - Copy the downloaded service account JSON file to the root of this project',
+);
 console.log('   - Rename it to "credentials.json"');
 console.log('   - The file should start with: {"type":"service_account",...}');
 console.log('');
 console.log('6. Share your Google Sheet:');
 console.log('   - Open your Google Sheet');
 console.log('   - Click "Share"');
-console.log('   - Add your service account email (found in the credentials as "client_email")');
+console.log(
+  '   - Add your service account email (found in the credentials as "client_email")',
+);
 console.log('   - Give it "Viewer" permissions');
 console.log('');
 console.log('7. Set the environment variable:');
 console.log('   - Create a .env file in the root directory');
 console.log('   - Add: GOOGLE_SHEET_ID=your-spreadsheet-id');
-console.log('   - The spreadsheet ID is in the URL: https://docs.google.com/spreadsheets/d/SPREADSHEET_ID/edit');
+console.log(
+  '   - The spreadsheet ID is in the URL: https://docs.google.com/spreadsheets/d/SPREADSHEET_ID/edit',
+);
 console.log('');
 console.log('8. Install dependencies:');
 console.log('   npm install');
@@ -57,20 +63,26 @@ if (!fs.existsSync(credentialsPath)) {
   console.log('❌ credentials.json not found. Please follow step 5 above.');
 } else {
   console.log('✅ credentials.json found!');
-  
+
   // Check if it's a service account credentials file
   try {
     const credentials = JSON.parse(fs.readFileSync(credentialsPath, 'utf8'));
     if (credentials.type === 'service_account') {
       console.log('✅ Service account credentials detected!');
     } else if (credentials.installed || credentials.web) {
-      console.log('❌ OAuth 2.0 credentials detected. Please use service account credentials instead.');
+      console.log(
+        '❌ OAuth 2.0 credentials detected. Please use service account credentials instead.',
+      );
       console.log('   Follow step 3 above to create a service account.');
     } else {
-      console.log('❌ Unknown credentials format. Please use service account credentials.');
+      console.log(
+        '❌ Unknown credentials format. Please use service account credentials.',
+      );
     }
-  } catch (error) {
-    console.log('❌ Error reading credentials.json. Please check the file format.');
+  } catch {
+    console.log(
+      '❌ Error reading credentials.json. Please check the file format.',
+    );
   }
 }
 
@@ -82,4 +94,6 @@ if (!fs.existsSync(envPath)) {
   console.log('✅ .env file found!');
 }
 
-console.log('\n🎉 Once you\'ve completed all steps, your site will pull data directly from Google Sheets!'); 
+console.log(
+  "\n🎉 Once you've completed all steps, your site will pull data directly from Google Sheets!",
+);
