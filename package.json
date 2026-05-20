@@ -8,6 +8,7 @@
     "gatsby"
   ],
   "scripts": {
+    "dev": "gatsby develop",
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
@@ -15,7 +16,10 @@
     "clean": "gatsby clean",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "setup-google-sheets": "node setup-google-sheets.js"
+    "setup-google-sheets": "node setup-google-sheets.js",
+    "serve:static": "gatsby serve -p 9000",
+    "check-links": "npm run build && start-server-and-test serve:static http://localhost:9000 check-links:crawl",
+    "check-links:crawl": "linkinator http://localhost:9000 --recurse --skip '^(mailto:|tel:|javascript:)'"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -52,6 +56,8 @@
     "eslint-plugin-prettier": "^5.5.3",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "prettier": "^3.6.2"
+    "linkinator": "^6.1.2",
+    "prettier": "^3.6.2",
+    "start-server-and-test": "^2.0.11"
   }
 }
