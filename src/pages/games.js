@@ -5,24 +5,35 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Game from '../components/game';
 
+const filters = ['Released', 'Playtesting', 'In Development', 'All'];
+
 const GamesPage = ({ data }) => {
   const gameList = data.allGoogleSheet.nodes;
+  const [activeFilter, setActiveFilter] = useState('All');
   const [gameDisplayList, setGameDisplayList] = useState(gameList);
 
-  const buttonStyles = css`
-    padding: 0.25rem 0.5rem;
-    background: #ddca4d;
-    border: none;
+  const buttonStyles = (isActive) => css`
     padding: 0.3rem 1rem;
-    text-decoration: none;
+    background: ${isActive ? '#57060e' : '#ddca4d'};
+    color: ${isActive ? '#fff' : '#202027'};
+    border: 2px solid transparent;
     border-radius: 0.3rem;
+    cursor: pointer;
+    font: inherit;
+    font-weight: ${isActive ? 700 : 400};
 
     &:hover {
-      background: #ccba45;
+      background: ${isActive ? '#6d0914' : '#ccba45'};
+    }
+
+    &:focus-visible {
+      outline: 2px solid #57060e;
+      outline-offset: 2px;
     }
   `;
 
   const handleClick = (filter) => {
+    setActiveFilter(filter);
     if (filter === 'All') {
       setGameDisplayList(gameList);
     } else {
@@ -92,58 +103,62 @@ const GamesPage = ({ data }) => {
           <p>
             The following games are <em>Descended from the Queen</em>.
           </p>
-          <p
+          <div
             css={css`
-              display: flex;
-              gap: 0.5rem;
-              align-items: center;
               margin-bottom: 3rem;
             `}
           >
-            <strong
+            <p
               css={css`
-                margin-right: 0.5rem;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                align-items: center;
+                margin-bottom: 0.75rem;
               `}
             >
-              Filter by Status:
-            </strong>
-            <button
-              type="button"
-              onClick={() => {
-                handleClick('Released');
-              }}
-              css={buttonStyles}
+              <strong
+                css={css`
+                  margin-right: 0.5rem;
+                `}
+              >
+                Filter by Status:
+              </strong>
+              <span
+                role="group"
+                aria-label="Filter by status"
+                css={css`
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 0.5rem;
+                `}
+              >
+                {filters.map((filter) => {
+                  const isActive = activeFilter === filter;
+                  return (
+                    <button
+                      type="button"
+                      key={filter}
+                      aria-pressed={isActive}
+                      onClick={() => {
+                        handleClick(filter);
+                      }}
+                      css={buttonStyles(isActive)}
+                    >
+                      {filter}
+                    </button>
+                  );
+                })}
+              </span>
+            </p>
+            <p
+              css={css`
+                margin: 0;
+              `}
             >
-              Released
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                handleClick('Playtesting');
-              }}
-              css={buttonStyles}
-            >
-              Playtesting
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                handleClick('In Development');
-              }}
-              css={buttonStyles}
-            >
-              In Development
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                handleClick('All');
-              }}
-              css={buttonStyles}
-            >
-              All
-            </button>
-          </p>
+              Now showing: <strong>{activeFilter}</strong>
+            </p>
+          </div>
           {console.log(gameDisplayList)}
           {gameDisplayList &&
             gameDisplayList
