@@ -25,6 +25,19 @@ export default function HTML({
           data-site="QHZXZUKU"
           defer
         />
+        <script
+          async
+          src="https://analytics.amazingrando.com/js/pa-Ayf9RHWX4TO-B6Qa4QwT0.js"
+        />
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+              plausible.init()
+            `,
+          }}
+        />
       </head>
       <body {...bodyAttributes}>
         {preBodyComponents}
