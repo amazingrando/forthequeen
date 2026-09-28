@@ -2,7 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
-const SEO = ({ title, description, image, pathname, article }) => (
+const SEO = ({
+  title = null,
+  description = null,
+  image = null,
+  pathname = null,
+  article = false,
+}) => (
   <StaticQuery
     query={query}
     render={({
@@ -60,14 +66,6 @@ SEO.propTypes = {
   image: PropTypes.string,
   pathname: PropTypes.string,
   article: PropTypes.bool,
-};
-
-SEO.defaultProps = {
-  title: null,
-  description: null,
-  image: null,
-  pathname: null,
-  article: false,
 };
 
 const query = graphql`
