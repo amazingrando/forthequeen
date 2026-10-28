@@ -55,7 +55,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "linkinator": "^8.1.0",
-    "netlify-cli": "^27.10.1",
+    "netlify-cli": "^27.15.0",
     "prettier": "^3.9.9",
     "start-server-and-test": "^3.0.12"
   }
