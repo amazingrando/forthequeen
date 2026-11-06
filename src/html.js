@@ -20,12 +20,6 @@ export default function HTML({
         />
         {headComponents}
         <script
-          src="https://cdn.usefathom.com/script.js"
-          data-spa="auto"
-          data-site="QHZXZUKU"
-          defer
-        />
-        <script
           async
           src="https://analytics.amazingrando.com/js/pa-Ayf9RHWX4TO-B6Qa4QwT0.js"
         />
